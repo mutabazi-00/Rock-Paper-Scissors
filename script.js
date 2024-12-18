@@ -11,7 +11,6 @@ function getComputerChoice() {
     }
 }
 
-
 function getHumanChoice() {
 
     let choice = prompt("Please enter your choice (rock, paper, or scissors):");
@@ -32,8 +31,8 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     // Make humanChoice case-insensitive
-    humanChoice = humanChoice.toLowerCase();
-    computerChoice = computerChoice.toLowerCase();
+    // let humanChoice = getHumanChoice();
+    // let computerChoice = getComputerChoice();
 
     // Determine the winner and update the score
     if (humanChoice === computerChoice) {
@@ -57,38 +56,42 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+playRound(getHumanChoice(), getComputerChoice());
 
-function playGame() {    
-    // Play 5 rounds using a loop
-    for (let round = 1; round <= 5; round++) {
-        console.log(`Round ${round}:`); // Show the round number
 
-        // Get the choices
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
+// function playGame() {    
+//     // Play 5 rounds using a loop
+//     for (let round = 1; round <= 5; round++) {
+//         console.log(`Round ${round}:`); // Show the round number
 
-        // Play a single round and announce the result
-        const result = playRound(humanChoice, computerChoice);
-        console.log(result);
+//         // Get the choices
+//         const humanChoice = getHumanChoice();
+//         const computerChoice = getComputerChoice();
 
-        // Update scores based on the result
-        if (result.includes("You win!")) {
-            humanScore++;
-        } else if (result.includes("You lose!")) {
-            computerScore++;
-        }
+//         // Play a single round and announce the result
+//         const result = playRound(humanChoice, computerChoice);
+//         console.log(result);
 
-        // Show the current score
-        console.log(`Current Scores -> Human: ${humanScore}, Computer: ${computerScore}`);
-        console.log("-------------------------------------------------")
-    }
+//         // Update scores based on the result
+//         if (result.includes("You win!")) {
+//             humanScore++;
+//         } else if (result.includes("You lose!")) {
+//             computerScore++;
+//         }
 
-    // Announce the overall winner
-    if (humanScore > computerScore) {
-        console.log("Congratulations! You are the overall winner!");
-    } else if (humanScore < computerScore) {
-        console.log("Oh no! The computer won this time. Best of luck next time!");
-    } else {
-        console.log("It's a tie! Well played!");
-    }
-}
+//         // Show the current score
+//         console.log(`Current Scores -> Human: ${humanScore}, Computer: ${computerScore}`);
+//         console.log("-------------------------------------------------")
+//     }
+
+//     // Announce the overall winner
+//     if (humanScore > computerScore) {
+//         console.log("Congratulations! You are the overall winner!");
+//     } else if (humanScore < computerScore) {
+//         console.log("Oh no! The computer won this time. Best of luck next time!");
+//     } else {
+//         console.log("It's a tie! Well played!");
+//     }
+// }
+
+// console.log("Hello World!")
